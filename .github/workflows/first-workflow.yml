@@ -1,0 +1,10 @@
+name: First-Workflow
+on: workflow_dispatch
+jobs:
+ first_job:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Greet User Printing
+     run: echo "Welcome to this DevOps World"
+   - name: Print GoodBye
+     run: echo "See you later, GoodBye!"
