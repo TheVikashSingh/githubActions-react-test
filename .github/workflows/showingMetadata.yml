@@ -1,0 +1,9 @@
+name: Showing The GitHub Actions Metadata
+on: workflow_dispatch
+jobs:
+ show-meta-data:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Just show the data
+      run: echo ${{ toJSON(github) }}
+   
