@@ -1,5 +1,5 @@
 name: Deploying a React Project
-on: push
+on: [push, workflow_dispatch]
 jobs:
  testing-the-react-app:
   runs-on: ubuntu-latest
