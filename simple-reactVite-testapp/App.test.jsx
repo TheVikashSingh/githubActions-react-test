@@ -18,4 +18,9 @@ describe("Checking if the word - welcome exists?", () => {
         expect(screen.getByText(/Test/i)).toBeInTheDocument();
     });
 
+    it("checking if a word exists", () => {
+        render(<App />);
+        expect(screen.getByText(/siTE/i)).toBeInTheDocument();
+    });
+
 });
