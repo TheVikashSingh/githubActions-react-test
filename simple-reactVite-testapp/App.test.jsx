@@ -6,7 +6,7 @@ import { describe, it, expect } from "vitest";
 import "@testing-library/jest-dom/vitest"
 
 
-describe("Checking if the word - welcome exists?", () => {
+describe("Checking if some words exist?", () => {
 
     it("checking if a word exists", () => {
         render(<App />);
