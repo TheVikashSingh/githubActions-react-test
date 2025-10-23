@@ -10,6 +10,8 @@ jobs:
      uses: actions/setup-node@v3
      with:
       node-version: 20
+   - name: Installing Vitest and other dependencies
+     run: npm install --save-dev vitest @testing-library/react @testing-library/jest-dom @vitejs/plugin-react
    - name: Running the Test
      run: npm run test    
 
