@@ -15,6 +15,7 @@ jobs:
    - name: Running the Test
      run: npm run test    
  deploying-the-react-app:
+  needs:  [testing-the-react-app]
   runs-on: ubuntu-latest
   steps:
     - name: Getting the code
