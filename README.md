@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -19,3 +20,6 @@ If you are developing a production application, we recommend using TypeScript wi
 # githubActions-practice-first
 Applying the knowledge of GitHub Actions.
 >>>>>>> origin
+=======
+# githubActions-react-test
+>>>>>>> 6e1d5ef0ad6daaaf4c9d47c6ff42265022f4d278
