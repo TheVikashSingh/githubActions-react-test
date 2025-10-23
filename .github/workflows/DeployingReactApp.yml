@@ -1,0 +1,36 @@
+name: Deploying a React Project
+on: push
+jobs:
+ testing-the-react-app:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Getting the code
+     uses: actions/checkout@v5
+   - name: Installing NodeJS
+     uses: actions/setup-node@v3
+     with:
+      node-version: 20
+   - name: Installing dependencies
+     run: npm ci
+   - name: Running the Test
+     run: npm run test    
+ deploying-the-react-app:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Getting the code
+      uses: actions/checkout@v5
+    - name: Installing NodeJS
+      uses: actions/setup-node@v3
+      with:
+       node-version: 20
+    - name: Installing dependencies
+      run: npm ci
+    - name: Building the app
+      run: npm run build
+    - name: Deploy   #usually we deploy the website to some hosting server         
+      run: echo "Deploying the website"
+
+
+
+
+
