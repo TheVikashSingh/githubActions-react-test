@@ -6,7 +6,7 @@ import { describe, it, expect } from "vitest";
 describe("Looking for a word", () => {
     it("Looking for welcome text", () => {
         render(<App />);
-        expect(screen.getByText(/Welcome/i)).not.toBeInTheDocument;
+        expect(screen.getByText(/Welcome5/i)).toBeInTheDocument;
     })
 });
 
