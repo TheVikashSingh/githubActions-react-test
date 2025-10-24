@@ -37,7 +37,15 @@ jobs:
  deploying:
   needs: building-the-react-app 
   runs-on: ubuntu-latest
-  steps:      
+  steps:
+   - name: show items available
+     run: ls      
+   - name: Downloading the artifacts into this machine
+     uses: actions/download-artifact@v5
+     with:
+      name: Uploading the artifacts
+   - name: checking items available again
+     run: ls   
    - name: Deploying this app
      run: echo "Deploying this react app..."
             
