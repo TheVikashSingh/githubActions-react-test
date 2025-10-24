@@ -1,0 +1,24 @@
+# name: Studying Events
+# on:
+#  pull_request:
+#   types:
+#    - opened
+#   branches:
+#    - main
+#    - "dev-*"
+#    - "feat/**" 
+#  workflow_dispatch:
+#  push:
+#   branches:
+#    - main
+#    - "feat/**"
+# jobs:
+#  deploying:
+#   runs-on: ubuntu-latest
+#   steps:
+#    - name: checking out
+#      uses: actions/checkout@v5
+#    - name: testing it
+#      run: npm run test   
+
+
