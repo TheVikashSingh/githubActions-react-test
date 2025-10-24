@@ -14,7 +14,7 @@ jobs:
      run: npm ci
    - name: Running the Test
      run: npm run test    
- deploying-the-react-app:
+ building-the-react-app:
   needs: testing-the-react-app
   runs-on: ubuntu-latest
   steps:
@@ -28,8 +28,20 @@ jobs:
       run: npm ci
     - name: Building the app
       run: npm run build
-    - name: Deploy   #usually we deploy the website to some hosting server         
-      run: echo "Deploying the website"
+    - name: Uploading the artifacts
+      uses: actions/upload-artifact@v4
+      with:
+       path: |  #uploading package.json just to learn use of the pipe operator
+        dist/   
+        package.json
+ deploying:
+  needs: building-the-react-app 
+  runs-on: ubuntu-latest
+  steps:      
+   - name: Deploying this app
+     run: echo "Deploying this react app..."
+            
+
 
 
 
