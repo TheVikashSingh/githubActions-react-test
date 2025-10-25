@@ -10,6 +10,13 @@ jobs:
      uses: actions/setup-node@v3
      with:
       node-version: 20
+   - name: Caching npm dependencies
+     uses: actions/cache@v4
+     with:
+      path: ~/.npm
+      key: ${{ runner.os }}-npm-${{ hashFiles("**/package-lock.json") }}   
+      restore-keys: |
+       ${{ runner.os }}-npm
    - name: Installing dependencies
      run: npm ci
    - name: Running the Test
@@ -29,6 +36,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
        node-version: 20
+    - name: Restoring npm cache
+      uses: actions/cache@v4
+      with:
+       path: ~/.npm
+       key: ${{ runner.os }}-npm-${{ hashFiles("**/package-lock.json") }}
+       restore-keys: |
+        ${{ runner.os }}-npm-   
     - name: Installing dependencies
       run: npm ci
     - name: Building the app
