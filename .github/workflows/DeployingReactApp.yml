@@ -17,7 +17,12 @@ jobs:
  building-the-react-app:
   needs: testing-the-react-app
   runs-on: ubuntu-latest
+  outputs:
+   version: ${{ steps.my_run_version_id.outputs.version }} 
   steps:
+    - name: Getting the version
+      id: my_version_id
+      run: echo "version=1.2.${{ github.run_number }}" >> $GITHUB_OUTPUT
     - name: Getting the code
       uses: actions/checkout@v5
     - name: Installing NodeJS
@@ -47,6 +52,8 @@ jobs:
       name: dist-build
    - name: checking items available again
      run: ls   
+   - name: Showing the version from  building-the-react-app job  
+     run: echo "Deploying version ${{ needs.building-the-react-app.outputs.version }}"
    - name: Deploying this app
      run: echo "Deploying this react app..."
             
