@@ -1,5 +1,7 @@
 name: Deploying a React Project
 on: [push, workflow_dispatch]
+env:
+ MY_API_KEY: abc123#
 jobs:
  testing-the-react-app:
   runs-on: ubuntu-latest
@@ -21,6 +23,10 @@ jobs:
      run: npm ci
    - name: Running the Test
      run: npm run test    
+   - name: Getting some environment variables & API KEY
+     run: |
+      echo "The API KEY is $MY_API_KEY"
+      echo "Some other env variables are $GITHUB_REPOSITORY"
  building-the-react-app:
   needs: testing-the-react-app
   runs-on: ubuntu-latest
